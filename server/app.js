@@ -30,7 +30,7 @@ db.connect((err) => {
 });
 
 // ===================== 注册接口 =====================
-app.post('/api/register', (req, res) => {
+app.post('http://3000/api/register', (req, res) => {
   const { username, password } = req.body;
 
   // 增加参数校验
@@ -60,7 +60,7 @@ app.post('/api/register', (req, res) => {
 });
 
 // ===================== 登录接口 =====================
-app.post('/api/login', (req, res) => {
+app.post('http://3000/api/login', (req, res) => {
   const { username, password } = req.body;
 
   // 增加参数校验
@@ -86,7 +86,7 @@ app.post('/api/login', (req, res) => {
 });
 
 // 启动后端服务（增加错误捕获）
-const server = app.listen(port, () => {
+const server = app.listen(port,'0.0.0.0',())=> {
   console.log(`✅ 后端服务已启动：http://localhost:${port}`);
 });
 
